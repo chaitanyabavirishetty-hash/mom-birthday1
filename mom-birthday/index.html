@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Amma 💗</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+overflow-x:hidden;
+background:linear-gradient(135deg,#ffe4e1,#ffd6e7,#fff0f5);
+}
+
+/* INTRO */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:1000;
+background:linear-gradient(135deg,#ffe4e1,#ffd6e7,#fff0f5);
+overflow:hidden;
+}
+
+#intro h1{
+font-size:64px;
+color:#ff4d6d;
+animation:heartbeat 2s infinite;
+}
+
+@keyframes heartbeat{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+/* intro floating elements */
+
+.introHeart{
+position:absolute;
+font-size:26px;
+animation:introFloat 8s linear infinite;
+}
+
+.introBalloon{
+position:absolute;
+font-size:32px;
+animation:introFloat 10s linear infinite;
+}
+
+@keyframes introFloat{
+0%{transform:translateY(0);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-120vh);opacity:0}
+}
+
+/* MAIN PAGE */
+
+#main{
+display:none;
+}
+
+h1{
+color:#ff4d6d;
+margin-top:40px;
+}
+
+/* CAROUSEL */
+
+.carousel{
+width:260px;
+height:260px;
+margin:40px auto;
+position:relative;
+transform-style:preserve-3d;
+animation:spin 16s linear infinite;
+}
+
+.carousel img{
+position:absolute;
+width:220px;
+height:220px;
+border-radius:15px;
+object-fit:cover;
+left:20px;
+top:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.carousel img:nth-child(1){transform:rotateY(0deg) translateZ(300px);}
+.carousel img:nth-child(2){transform:rotateY(90deg) translateZ(300px);}
+.carousel img:nth-child(3){transform:rotateY(180deg) translateZ(300px);}
+.carousel img:nth-child(4){transform:rotateY(270deg) translateZ(300px);}
+
+@keyframes spin{
+from{transform:rotateY(0)}
+to{transform:rotateY(360deg)}
+}
+
+/* BUTTON */
+
+button{
+padding:15px 30px;
+font-size:18px;
+background:#ff4d6d;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* MESSAGE */
+
+.message{
+background:white;
+padding:30px;
+margin:50px auto;
+width:70%;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:22px;
+animation:heartUp 6s linear;
+}
+
+@keyframes heartUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+/* BALLOONS */
+
+.balloon{
+position:fixed;
+bottom:-60px;
+font-size:40px;
+animation:balloonUp 9s linear;
+}
+
+@keyframes balloonUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(120vh)}
+}
+
+/* MEMORY PHOTOS */
+
+.memory-photo{
+position:fixed;
+width:180px;
+border-radius:12px;
+opacity:0;
+animation:fadeIn 2s forwards;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+to{opacity:1}
+}
+
+/* FINAL SCENE */
+
+#finalScene{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(10px);
+z-index:9999;
+color:white;
+padding:20px;
+}
+
+#finalScene img{
+width:280px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+#finalText{
+font-size:26px;
+max-width:650px;
+margin-top:25px;
+line-height:1.6;
+}
+
+.signature{
+margin-top:30px;
+opacity:0.8;
+font-size:16px;
+}
+
+.finalHeart{
+position:absolute;
+font-size:26px;
+animation:floatHeart 6s linear infinite;
+}
+
+@keyframes floatHeart{
+0%{transform:translateY(0);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-200px);opacity:0}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="intro">
+<h1>Happy Birthday Amma 💗</h1>
+<p>A small surprise made with love</p>
+</div>
+
+<div id="main">
+
+<audio autoplay loop>
+<source src="music.mp3">
+</audio>
+
+<h1>Happy Birthday Amma 💗</h1>
+
+<p>Some of my favorite memories with you</p>
+
+<div class="carousel">
+
+<img src="us1.jpg">
+<img src="us2.jpg">
+<img src="us3.jpg">
+<img src="us4.jpg">
+
+</div>
+
+<button onclick="showSurprise()">Click for Surprise 🎁</button>
+
+<div class="message">
+
+<h2>Amma, Thank You for Everything 💗</h2>
+
+<p>
+
+From the very beginning of my life you have been my greatest support and my safe place.
+
+Every memory with you is something I treasure deeply.
+
+Your strength, kindness and love inspire me every single day.
+
+Happy Birthday Amma 💗
+
+</p>
+
+</div>
+
+</div>
+
+<div id="finalScene">
+
+<img src="final.jpg">
+
+<div id="finalText">
+
+Amma, you are my greatest blessing.
+
+From my very first step in life, your love has been my strength,
+my comfort, and my safe place.
+
+Everything I am today is because of you.
+
+Thank you for every sacrifice, every hug, and every moment of love.
+
+Happy Birthday Amma 💗
+
+</div>
+
+<div class="signature">
+Made with love by your son 💗
+</div>
+
+</div>
+
+<script>
+
+/* intro hearts */
+
+for(let i=0;i<6;i++){
+
+let heart=document.createElement("div");
+heart.className="introHeart";
+heart.innerHTML="💗";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom=Math.random()*20+"px";
+
+document.getElementById("intro").appendChild(heart);
+
+}
+
+for(let i=0;i<4;i++){
+
+let balloon=document.createElement("div");
+balloon.className="introBalloon";
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+balloon.style.bottom=Math.random()*20+"px";
+
+document.getElementById("intro").appendChild(balloon);
+
+}
+
+/* intro timer */
+
+setTimeout(()=>{
+
+document.getElementById("intro").style.display="none";
+document.getElementById("main").style.display="block";
+
+},4000);
+
+/* surprise */
+
+function showSurprise(){
+
+document.querySelector(".carousel").style.display="none";
+document.querySelector("button").style.display="none";
+
+createHearts();
+createBalloons();
+createConfetti();
+showMemories();
+
+}
+
+/* hearts */
+
+function createHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},3200);
+
+}
+
+/* balloons */
+
+function createBalloons(){
+
+setInterval(()=>{
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>balloon.remove(),9000);
+
+},4200);
+
+}
+
+/* confetti */
+
+function createConfetti(){
+
+for(let i=0;i<60;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+c.style.top=Math.random()*-100+"vh";
+c.style.backgroundColor=`hsl(${Math.random()*360},100%,50%)`;
+
+document.body.appendChild(c);
+
+setTimeout(()=>c.remove(),4000);
+
+}
+
+}
+
+/* memory wall */
+
+function showMemories(){
+
+const photos=[
+"amma1.jpg",
+"amma2.jpg",
+"amma3.jpg",
+"amma4.jpg",
+"amma5.jpg",
+"amma6.jpg"
+];
+
+const positions=[
+{top:"20vh",left:"10vw"},
+{top:"15vh",left:"40vw"},
+{top:"20vh",left:"70vw"},
+{top:"45vh",left:"15vw"},
+{top:"50vh",left:"45vw"},
+{top:"45vh",left:"75vw"}
+];
+
+photos.forEach((photo,index)=>{
+
+setTimeout(()=>{
+
+let img=document.createElement("img");
+
+img.src=photo;
+img.className="memory-photo";
+
+img.style.top=positions[index].top;
+img.style.left=positions[index].left;
+
+let rotate=(Math.random()*10)-5;
+
+img.style.transform="rotate("+rotate+"deg)";
+
+document.body.appendChild(img);
+
+},index*1400);
+
+});
+
+setTimeout(showFinal, photos.length*1400 + 2000);
+
+}
+
+/* final scene */
+
+function showFinal(){
+
+document.getElementById("finalScene").style.display="flex";
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="finalHeart";
+heart.innerHTML="💗";
+
+heart.style.left=(40+Math.random()*20)+"vw";
+heart.style.top=(60+Math.random()*20)+"vh";
+
+document.getElementById("finalScene").appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},1200);
+
+}
+
+</script>
+
+</body>
+
+</html>
