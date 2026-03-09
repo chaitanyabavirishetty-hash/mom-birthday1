@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Amma 💗</title>
+
 <style>
 
 body{
@@ -26,7 +35,7 @@ overflow:hidden;
 }
 
 #intro h1{
-font-size:8vw;
+font-size:64px;
 color:#ff4d6d;
 animation:heartbeat 2s infinite;
 }
@@ -37,45 +46,23 @@ animation:heartbeat 2s infinite;
 100%{transform:scale(1)}
 }
 
-/* intro floating elements */
-
-.introHeart{
-position:absolute;
-font-size:6vw;
-animation:introFloat 8s linear infinite;
-}
-
-.introBalloon{
-position:absolute;
-font-size:7vw;
-animation:introFloat 10s linear infinite;
-}
-
-@keyframes introFloat{
-0%{transform:translateY(0);opacity:0}
-20%{opacity:1}
-100%{transform:translateY(-120vh);opacity:0}
-}
-
 /* MAIN PAGE */
 
 #main{
 display:none;
-padding:10px;
 }
 
 h1{
 color:#ff4d6d;
-margin-top:30px;
-font-size:7vw;
+margin-top:40px;
 }
 
 /* CAROUSEL */
 
 .carousel{
-width:70vw;
-height:70vw;
-margin:30px auto;
+width:260px;
+height:260px;
+margin:40px auto;
 position:relative;
 transform-style:preserve-3d;
 animation:spin 16s linear infinite;
@@ -83,19 +70,19 @@ animation:spin 16s linear infinite;
 
 .carousel img{
 position:absolute;
-width:60vw;
-height:60vw;
+width:220px;
+height:220px;
 border-radius:15px;
 object-fit:cover;
-left:5vw;
-top:5vw;
+left:20px;
+top:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-.carousel img:nth-child(1){transform:rotateY(0deg) translateZ(45vw);}
-.carousel img:nth-child(2){transform:rotateY(90deg) translateZ(45vw);}
-.carousel img:nth-child(3){transform:rotateY(180deg) translateZ(45vw);}
-.carousel img:nth-child(4){transform:rotateY(270deg) translateZ(45vw);}
+.carousel img:nth-child(1){transform:rotateY(0deg) translateZ(300px);}
+.carousel img:nth-child(2){transform:rotateY(90deg) translateZ(300px);}
+.carousel img:nth-child(3){transform:rotateY(180deg) translateZ(300px);}
+.carousel img:nth-child(4){transform:rotateY(270deg) translateZ(300px);}
 
 @keyframes spin{
 from{transform:rotateY(0)}
@@ -105,8 +92,8 @@ to{transform:rotateY(360deg)}
 /* BUTTON */
 
 button{
-padding:15px 25px;
-font-size:5vw;
+padding:15px 30px;
+font-size:18px;
 background:#ff4d6d;
 color:white;
 border:none;
@@ -118,68 +105,11 @@ cursor:pointer;
 
 .message{
 background:white;
-padding:25px;
-margin:40px auto;
-width:90%;
+padding:30px;
+margin:50px auto;
+width:70%;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
-font-size:4.5vw;
-}
-
-/* FLOATING HEARTS */
-
-.heart{
-position:fixed;
-bottom:-20px;
-font-size:6vw;
-animation:heartUp 6s linear;
-}
-
-@keyframes heartUp{
-0%{transform:translateY(0)}
-100%{transform:translateY(-110vh)}
-}
-
-/* BALLOONS */
-
-.balloon{
-position:fixed;
-bottom:-60px;
-font-size:9vw;
-animation:balloonUp 9s linear;
-}
-
-@keyframes balloonUp{
-0%{transform:translateY(0)}
-100%{transform:translateY(-120vh)}
-}
-
-/* CONFETTI */
-
-.confetti{
-position:fixed;
-width:10px;
-height:10px;
-animation:fall 4s linear forwards;
-}
-
-@keyframes fall{
-to{transform:translateY(120vh)}
-}
-
-/* MEMORY PHOTOS */
-
-.memory-photo{
-position:fixed;
-width:35vw;
-border-radius:12px;
-opacity:0;
-animation:fadeIn 2s forwards;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
-
-@keyframes fadeIn{
-to{opacity:1}
 }
 
 /* FINAL SCENE */
@@ -199,31 +129,55 @@ backdrop-filter:blur(10px);
 z-index:9999;
 color:white;
 padding:20px;
-text-align:center;
 }
 
 #finalScene img{
-width:70vw;
+width:280px;
+max-width:90%;
 border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
+/* FIXED FINAL TEXT */
+
 #finalText{
-font-size:5vw;
-max-width:90%;
-margin-top:20px;
+font-size:22px;
+max-width:600px;
+width:90%;
+margin-top:25px;
+line-height:1.7;
+background:rgba(0,0,0,0.45);
+padding:20px;
+border-radius:15px;
+box-sizing:border-box;
+text-align:center;
+}
+
+/* MOBILE FIX */
+
+@media (max-width:600px){
+
+#finalText{
+font-size:17px;
+padding:18px;
 line-height:1.6;
 }
 
+#finalScene img{
+width:75%;
+}
+
+}
+
 .signature{
-margin-top:25px;
+margin-top:30px;
 opacity:0.8;
-font-size:4vw;
+font-size:16px;
 }
 
 .finalHeart{
 position:absolute;
-font-size:6vw;
+font-size:26px;
 animation:floatHeart 6s linear infinite;
 }
 
@@ -234,3 +188,144 @@ animation:floatHeart 6s linear infinite;
 }
 
 </style>
+
+</head>
+
+<body>
+
+<div id="intro">
+<h1>Happy Birthday Amma 💗</h1>
+<p>A small surprise made with love</p>
+</div>
+
+<div id="main">
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
+
+<h1>Happy Birthday Amma 💗</h1>
+
+<p>Some of my favorite memories with you</p>
+
+<div class="carousel">
+
+<img src="us1.jpg">
+<img src="us2.jpg">
+<img src="us3.jpg">
+<img src="us4.jpg">
+
+</div>
+
+<button onclick="showSurprise()">Click for Surprise 🎁</button>
+
+<div class="message">
+
+<h2>Amma, Thank You for Everything 💗</h2>
+
+<p>
+From the very beginning of my life you have been my greatest support and my safe place.
+Every memory with you is something I treasure deeply.
+Your strength, kindness and love inspire me every single day.
+Happy Birthday Amma 💗
+</p>
+
+</div>
+
+</div>
+
+<div id="finalScene">
+
+<img src="final.jpg">
+
+<div id="finalText">
+
+Amma, you are my greatest blessing.
+
+From my very first step in life, your love has been my strength,
+my comfort, and my safe place.
+
+Everything I am today is because of you.
+
+Thank you for every sacrifice, every hug, and every moment of love.
+
+Happy Birthday Amma 💗
+
+</div>
+
+<div class="signature">
+Made with love by your son 💗
+</div>
+
+</div>
+
+<script>
+
+/* start music after intro */
+
+setTimeout(()=>{
+
+document.getElementById("intro").style.display="none";
+document.getElementById("main").style.display="block";
+
+document.getElementById("music").play();
+
+},4000);
+
+/* surprise */
+
+function showSurprise(){
+
+document.querySelector(".carousel").style.display="none";
+document.querySelector("button").style.display="none";
+
+showMemories();
+
+}
+
+function showMemories(){
+
+const photos=[
+"amma1.jpg",
+"amma2.jpg",
+"amma3.jpg",
+"amma4.jpg",
+"amma5.jpg",
+"amma6.jpg"
+];
+
+photos.forEach((photo,index)=>{
+
+setTimeout(()=>{
+
+let img=document.createElement("img");
+
+img.src=photo;
+img.style.position="fixed";
+img.style.width="180px";
+img.style.borderRadius="12px";
+img.style.top=(20+Math.random()*50)+"vh";
+img.style.left=(10+Math.random()*80)+"vw";
+img.style.boxShadow="0 10px 25px rgba(0,0,0,0.3)";
+
+document.body.appendChild(img);
+
+},index*1400);
+
+});
+
+setTimeout(showFinal, photos.length*1400 + 2000);
+
+}
+
+function showFinal(){
+
+document.getElementById("finalScene").style.display="flex";
+
+}
+
+</script>
+
+</body>
+
+</html>
