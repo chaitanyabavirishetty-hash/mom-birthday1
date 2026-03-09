@@ -215,10 +215,29 @@ box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
 #finalText{
-font-size:26px;
-max-width:650px;
-margin-top:25px;
-line-height:1.6;
+font-size:20px;
+max-width:90%;
+margin-top:20px;
+line-height:1.7;
+text-align:center;
+word-wrap:break-word;
+overflow-wrap:break-word;
+}
+
+/* phone fix */
+@media (max-width:600px){
+
+#finalText{
+font-size:16px;
+max-width:95%;
+line-height:1.8;
+padding:0 10px;
+}
+
+#finalScene{
+padding:15px;
+}
+
 }
 
 .signature{
@@ -510,3 +529,4 @@ setTimeout(()=>heart.remove(),6000);
 </body>
 
 </html>
+
