@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -44,6 +45,26 @@ animation:heartbeat 2s infinite;
 0%{transform:scale(1)}
 50%{transform:scale(1.1)}
 100%{transform:scale(1)}
+}
+
+/* intro floating elements */
+
+.introHeart{
+position:absolute;
+font-size:26px;
+animation:introFloat 8s linear infinite;
+}
+
+.introBalloon{
+position:absolute;
+font-size:32px;
+animation:introFloat 10s linear infinite;
+}
+
+@keyframes introFloat{
+0%{transform:translateY(0);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-120vh);opacity:0}
 }
 
 /* MAIN PAGE */
@@ -112,6 +133,62 @@ border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:22px;
+animation:heartUp 6s linear;
+}
+
+@keyframes heartUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+/* BALLOONS */
+
+.balloon{
+position:fixed;
+bottom:-60px;
+font-size:40px;
+animation:balloonUp 9s linear;
+}
+
+@keyframes balloonUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(120vh)}
+}
+
+/* MEMORY PHOTOS */
+
+.memory-photo{
+position:fixed;
+width:180px;
+border-radius:12px;
+opacity:0;
+animation:fadeIn 2s forwards;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+to{opacity:1}
+}
+
 /* FINAL SCENE */
 
 #finalScene{
@@ -133,40 +210,15 @@ padding:20px;
 
 #finalScene img{
 width:280px;
-max-width:90%;
 border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* FIXED FINAL TEXT */
-
 #finalText{
-font-size:22px;
-max-width:600px;
-width:90%;
+font-size:26px;
+max-width:650px;
 margin-top:25px;
-line-height:1.7;
-background:rgba(0,0,0,0.45);
-padding:20px;
-border-radius:15px;
-box-sizing:border-box;
-text-align:center;
-}
-
-/* MOBILE FIX */
-
-@media (max-width:600px){
-
-#finalText{
-font-size:17px;
-padding:18px;
 line-height:1.6;
-}
-
-#finalScene img{
-width:75%;
-}
-
 }
 
 .signature{
@@ -200,7 +252,7 @@ animation:floatHeart 6s linear infinite;
 
 <div id="main">
 
-<audio id="music" loop>
+<audio autoplay loop>
 <source src="music.mp3">
 </audio>
 
@@ -224,10 +276,15 @@ animation:floatHeart 6s linear infinite;
 <h2>Amma, Thank You for Everything 💗</h2>
 
 <p>
+
 From the very beginning of my life you have been my greatest support and my safe place.
+
 Every memory with you is something I treasure deeply.
+
 Your strength, kindness and love inspire me every single day.
+
 Happy Birthday Amma 💗
+
 </p>
 
 </div>
@@ -261,14 +318,40 @@ Made with love by your son 💗
 
 <script>
 
-/* start music after intro */
+/* intro hearts */
+
+for(let i=0;i<6;i++){
+
+let heart=document.createElement("div");
+heart.className="introHeart";
+heart.innerHTML="💗";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom=Math.random()*20+"px";
+
+document.getElementById("intro").appendChild(heart);
+
+}
+
+for(let i=0;i<4;i++){
+
+let balloon=document.createElement("div");
+balloon.className="introBalloon";
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+balloon.style.bottom=Math.random()*20+"px";
+
+document.getElementById("intro").appendChild(balloon);
+
+}
+
+/* intro timer */
 
 setTimeout(()=>{
 
 document.getElementById("intro").style.display="none";
 document.getElementById("main").style.display="block";
-
-document.getElementById("music").play();
 
 },4000);
 
@@ -279,9 +362,78 @@ function showSurprise(){
 document.querySelector(".carousel").style.display="none";
 document.querySelector("button").style.display="none";
 
+createHearts();
+createBalloons();
+createConfetti();
 showMemories();
 
 }
+
+/* hearts */
+
+function createHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},3200);
+
+}
+
+/* balloons */
+
+function createBalloons(){
+
+setInterval(()=>{
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>balloon.remove(),9000);
+
+},4200);
+
+}
+
+/* confetti */
+
+function createConfetti(){
+
+for(let i=0;i<60;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+c.style.top=Math.random()*-100+"vh";
+c.style.backgroundColor=`hsl(${Math.random()*360},100%,50%)`;
+
+document.body.appendChild(c);
+
+setTimeout(()=>c.remove(),4000);
+
+}
+
+}
+
+/* memory wall */
 
 function showMemories(){
 
@@ -294,6 +446,15 @@ const photos=[
 "amma6.jpg"
 ];
 
+const positions=[
+{top:"20vh",left:"10vw"},
+{top:"15vh",left:"40vw"},
+{top:"20vh",left:"70vw"},
+{top:"45vh",left:"15vw"},
+{top:"50vh",left:"45vw"},
+{top:"45vh",left:"75vw"}
+];
+
 photos.forEach((photo,index)=>{
 
 setTimeout(()=>{
@@ -301,12 +462,14 @@ setTimeout(()=>{
 let img=document.createElement("img");
 
 img.src=photo;
-img.style.position="fixed";
-img.style.width="180px";
-img.style.borderRadius="12px";
-img.style.top=(20+Math.random()*50)+"vh";
-img.style.left=(10+Math.random()*80)+"vw";
-img.style.boxShadow="0 10px 25px rgba(0,0,0,0.3)";
+img.className="memory-photo";
+
+img.style.top=positions[index].top;
+img.style.left=positions[index].left;
+
+let rotate=(Math.random()*10)-5;
+
+img.style.transform="rotate("+rotate+"deg)";
 
 document.body.appendChild(img);
 
@@ -318,9 +481,27 @@ setTimeout(showFinal, photos.length*1400 + 2000);
 
 }
 
+/* final scene */
+
 function showFinal(){
 
 document.getElementById("finalScene").style.display="flex";
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="finalHeart";
+heart.innerHTML="💗";
+
+heart.style.left=(40+Math.random()*20)+"vw";
+heart.style.top=(60+Math.random()*20)+"vh";
+
+document.getElementById("finalScene").appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},1200);
 
 }
 
